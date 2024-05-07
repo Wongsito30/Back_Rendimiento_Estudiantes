@@ -37,5 +37,51 @@ class Modificarcontrasena(BaseModel):
      class Config:
        from_attributes = True
 
+class cuestionario(BaseModel):
+     id: Optional[int] = None
+     preguntas: str
+     descripcion: str
+
+     class Config:
+       from_attributes = True
+
+class cuestionarioPreguntas(BaseModel):
+     preguntas: str
+
+     class Config:
+       from_attributes = True       
+
+class respuestas(BaseModel):
+     id: Optional[int] = None
+     id_cuestionario: int
+     id_pregunta: int
+     nickname: str
+     respuesta: str
+
+     class Config:
+         from_attributes = True
+
+class cambiarRespuestas(BaseModel):
+     respuesta: str
+
+     class Config:
+         from_attributes = True
+
+class preguntas(BaseModel):
+     id: Optional[int] = None
+     id_cuestionario: int
+     pregunta: str
+     tipo: str
+
+     class Config:
+       from_attributes = True
+
+class Cambiarpreguntas(BaseModel):
+     pregunta: str
+
+
+     class Config:
+       from_attributes = True
+       
 class respuesta(BaseModel):
      mensaje: str
