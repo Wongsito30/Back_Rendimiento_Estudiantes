@@ -13,6 +13,26 @@ class User(BaseModel):
      class Config:
        from_attributes = True
 
+class Admin(BaseModel):
+     id: Optional[int] = None
+     nickname: str
+     contrasena: str
+
+     class Config:
+       from_attributes = True
+
+class ModificarUsernameAdmin(BaseModel):
+     nickname: str
+
+     class Config:
+       from_attributes = True
+
+class ModificarPassWordAdmin(BaseModel):
+     contrasena: str
+
+     class Config:
+       from_attributes = True
+
 class RegisterUser(BaseModel):
      id: Optional[int] = None
      nickname: str

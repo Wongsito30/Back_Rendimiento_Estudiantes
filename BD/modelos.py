@@ -14,6 +14,12 @@ class Usuarios(Base):
     resultados = Column(String(1000))
     codigo = Column(Integer)
 
+class Admin(Base):
+    __tablename__ = 'admins'
+
+    id = Column(Integer, primary_key=True, index=True)
+    nickname = Column(String(50))
+    contrasena =  Column(String(1000))
 
 class Cuestionarios(Base):
     __tablename__ = 'cuestionarios'

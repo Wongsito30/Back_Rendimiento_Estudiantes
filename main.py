@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import login
+from routers import LoginAdmin
 from routers import registerUser
+from routers import AdminRegistro
 from routers import cuestionarios
 from routers import preguntas
 from routers import respuestas
@@ -19,6 +21,8 @@ app.add_middleware(
 
 
 app.include_router(login.router, tags=["Login"])
+app.include_router(LoginAdmin.router, tags=["LoginAdmin"])
+app.include_router(AdminRegistro.router, tags=["AdminRegistro"])
 app.include_router(registerUser.router, tags=["RegisterUser"])
 app.include_router(cuestionarios.router, tags=["Cuestionario"])
 app.include_router(preguntas.router, tags=["Preguntas"])
